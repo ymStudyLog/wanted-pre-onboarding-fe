@@ -2,31 +2,36 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from '../assets/logo.png';
 import color from '../styles/color';
-import { BiSearch } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const Navbar = ({ user, logout }) => {
   return (
     <Header>
       <SmallLogoImg src={Logo} />
-      <InputWrapper>
-        <BiSearch />
-        <HeaderInput
-          type="text"
-          placeholder="검색"
-          autoComplete="검색"
-          name="no-function"
-        />
-      </InputWrapper>
+      <HeaderInput
+        type="text"
+        placeholder="검색"
+        autoComplete="검색"
+        name="no-function"
+      />
       <ButtonWrapper>
         <IconButton />
         <IconButton />
-        <IconButton>logout</IconButton>
+        {user ? (
+          <Link to="/login">
+            <IconButton onClick={logout}>logout</IconButton>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <IconButton>login</IconButton>
+          </Link>
+        )}
       </ButtonWrapper>
     </Header>
   );
 };
 
-export default NavBar;
+export default Navbar;
 
 const Header = styled.div`
   position: sticky;
@@ -66,29 +71,13 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-const InputWrapper = styled.div`
-  display: none;
-
-  @media only screen and (min-width: 769px) {
-    display: flex;
-    align-items: center;
-    padding: 0 0.5rem;
-    width: 250px;
-    border: none;
-    border-radius: 3px;
-    background: ${color.gray[2]};
-    font-weight: bold;
-  }
-`;
-
 const HeaderInput = styled.input`
   display: none;
 
   @media only screen and (min-width: 769px) {
     display: inline;
-    width: 90%;
-    margin: 0 0.1rem;
-    padding: 0.8rem 0.4rem;
+    width: 250px;
+    padding: 0.8rem 0.5rem;
     background: ${color.gray[2]};
     font-weight: bold;
   }

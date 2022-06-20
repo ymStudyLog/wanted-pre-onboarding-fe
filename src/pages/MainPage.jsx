@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
-import NavBar from '../components/NavBar';
-import FeedTemplate from '../container/FeedTemplate';
+import Navbar from '../components/Navbar';
+import FeedForm from '../components/FeedForm';
 
 const MainPage = () => {
+  const user = localStorage.getItem('user');
+  const logout = useCallback(() => {
+    try {
+      localStorage.removeItem('user');
+    } catch (e) {
+      console.log('localStorage Error!');
+    }
+  });
+
   return (
     <div>
-      <NavBar />
+      <Navbar user={user} logout={logout} />
       <MainBody>
-        <FeedTemplate />
+        <FeedForm />
       </MainBody>
     </div>
   );

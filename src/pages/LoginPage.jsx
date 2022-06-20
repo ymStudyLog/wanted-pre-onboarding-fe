@@ -1,18 +1,23 @@
 import React from 'react';
+import Logo from '../assets/logo.png';
 import styled from 'styled-components';
-import LoginTemplate from '../container/LoginTemplate';
+import LoginForm from '../components/LoginForm';
+import color from '../styles/color';
 
 const LoginPage = () => {
   return (
-    <BackgroundBox>
-      <LoginTemplate />
-    </BackgroundBox>
+    <StyledBackground>
+      <Container>
+        <LogoImg src={Logo} />
+        <LoginForm />
+      </Container>
+    </StyledBackground>
   );
 };
 
 export default LoginPage;
 
-const BackgroundBox = styled.div`
+const StyledBackground = styled.div`
   position: absolute;
   left: 0;
   right: 0;
@@ -22,4 +27,20 @@ const BackgroundBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+const Container = styled.div`
+  min-width: 350px;
+  min-height: 400px;
+  border: 0.5px solid ${color.gray[4]};
+  background: ${color.white};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const LogoImg = styled.img`
+  width: 220px;
+  height: 80px;
 `;
