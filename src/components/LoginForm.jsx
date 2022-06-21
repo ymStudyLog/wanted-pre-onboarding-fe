@@ -10,8 +10,8 @@ import { useEffect } from 'react';
 
 //test 계정
 const adminAccount = {
-  id: 'asdfg@asdfg.asdfg',
-  pw: 'asd!@#ASD123',
+  id: 'aaaaa@aaaaa.aaa',
+  pw: 'aaa12a!@A',
 };
 
 const LoginForm = () => {
@@ -31,7 +31,7 @@ const LoginForm = () => {
   //인풋 유효성 검사 함수 - 나중에 useCallback? => useState로 동적 값을 저장할때 내가 입력한 값보다 하나씩 적게 저장되는 문제** -> useState빼고 다이렉트로 집어넣음
   //인풋이 입력되는 실시간으로 유효성 검사를 하려면 useState에 저장하고 나서 그 값을 유효성 검사를 하는게 아니라 e.target.value로 바로 유효성 검사를 한 다음 useState로 저장해야한다. 순서가 중요함
   const onIdChange = (e) => {
-    const result = validation(idRef.current.name, e.target.value); //e.target.name인가 ref를 사용한 ref.current.name인가
+    const result = validation(idRef.current.name, e.target.value); //useRef -> e.target.name 대체 가능
     if (result === false) {
       setValidUsername(true);
     } else {
@@ -41,7 +41,7 @@ const LoginForm = () => {
   };
 
   const onPwChange = (e) => {
-    const result = validation(pwRef.current.name, e.target.value);
+    const result = validation(pwRef.current.name, e.target.value); //useRef -> e.target.name 대체 가능
     if (result === false) {
       setValidPassword(true);
     } else {
@@ -63,7 +63,7 @@ const LoginForm = () => {
     if (username === adminAccount.id && password === adminAccount.pw) {
       try {
         localStorage.setItem('user', JSON.stringify(username));
-        navigate('/main');
+        navigate('/main'); //navigate 사용안하고 어차피 disabled 속성 사용하니까 Link로 써도 될 듯?
       } catch (e) {
         console.log('localStorage Error!');
       }

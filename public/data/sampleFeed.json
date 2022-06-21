@@ -1,0 +1,22 @@
+{
+    "feeds": [
+        {
+            "_id":1,
+            "nickname":"free_onboarding_fe",
+            "img":"https://source.unsplash.com/random/600x500",
+            "likes":0
+        },
+        {
+            "_id":2,
+            "nickname":"_sum_052",
+            "img":"https://source.unsplash.com/random/900x500",
+            "likes":1
+        },
+        {
+            "_id":3,
+            "nickname":"startttte_",
+            "img":"https://source.unsplash.com/random/700x1080",
+            "likes":4
+        }
+    ]
+}

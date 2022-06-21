@@ -41,6 +41,7 @@ const Header = styled.div`
   height: 60px;
   width: auto;
   padding: 0.2rem 0.5rem;
+  border-bottom: 0.1px solid ${color.gray[2]};
   background: ${color.white};
   display: flex;
   justify-content: space-between;
