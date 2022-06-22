@@ -20,14 +20,14 @@ npm start
 
 ## 과제 설명
 
-- 목표
+#### 목표
 
   - 레포지토리 fork후 초기 readme를 꼼꼼하게 읽고 assignment 5개를 바탕으로 빌드 계획을 세움.
   - 6월 22일 이내 제출을 목표로 빠르게 개발.
 
-- 개발 순서
+#### 개발 순서
 
-#### 19/06/2022
+- 19/06/2022
 
 1. assignment 분석, 프로젝트 디렉토리 대략적인 분류 및 UI 준비 : NavBar, LoginPage 와 MainPage 컴포넌트 제작.
 
@@ -36,7 +36,7 @@ npm start
 > Assignment 4 : SPA 라우팅 파트 50% 완료 (App.js에 라우팅 적용만 완료) <br/>
 > Assignment 5 : Feed 개발 0% 완료 <br/>
 
-#### 20/06/2022
+- 20/06/2022
 
 2. 로그인 기능과 유효성 검사 구현, Mock data 미리 생성, 라우팅 기능 마무리
 
@@ -49,7 +49,7 @@ npm start
 > Assignment 3 : Validation 파트 90% 완료 (ID,PW 정규식 틀림. 수정 예정) <br/> > _Assignment 4 : SPA 라우팅 파트 100% 완료_ <br/>
 > Assignment 5 : Feed 개발 5% 완료 <br/>
 
-#### 21/06/2022
+- 21/06/2022
 
 3. Feed와 Comment 컴포넌트 제작, Mock data axios로 가져오기, 이전에 제작한 컴포넌트 중 수정 필요한 부분 수정.
 
@@ -61,7 +61,7 @@ npm start
 > _Assignment 1 : Login 파트 100% 완료_ <br/> > _Assignment 2 : GNB 100% 완료_ <br/> > _Assignment 3 : Validation 파트 100% 완료_ <br/> > _Assignment 4 : SPA 라우팅 파트 100% 완료_ <br/>
 > Assignment 5 : Feed 개발 50% 완료 (image.onload를 사용한 loading 상태와 Comment 컴포넌트 기능 구현 필요)<br/>
 
-#### 22/06/2022
+- 22/06/2022
 
 4. Comment 컴포넌트 댓글 추가 기능 구현, onload 기능 적용하기. 프로젝트 전체적으로 체크하고 마무리.
 
