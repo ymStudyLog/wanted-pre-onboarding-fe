@@ -31,9 +31,10 @@ npm start
 
 1. assignment 분석, 프로젝트 디렉토리 대략적인 분류 및 UI 준비 : NavBar, LoginPage 와 MainPage 컴포넌트 제작.
 
-> Assignment 1 : Login 50% 완료 (UI 부분만 완료) <br/> > _Assignment 2 : GNB 100% 완료_ <br/>
-> Assignment 3 : Validation 0% 완료 <br/>
-> Assignment 4 : SPA 라우팅 파트 50% 완료 (App.js에 라우팅 적용만 완료) <br/>
+> Assignment 1 : Login 50% 완료 (UI 부분만 완료) <br/> 
+~~Assignment 2 : GNB 100% 완료~~ <br/>
+Assignment 3 : Validation 0% 완료 <br/>
+Assignment 4 : SPA 라우팅 파트 50% 완료 (App.js에 라우팅 적용만 완료) <br/>
 > Assignment 5 : Feed 개발 0% 완료 <br/>
 
 - 20/06/2022
@@ -45,8 +46,10 @@ npm start
 - login() : 로그인 버튼 클릭 이벤트 발생시 id와 pw가 맞으면 useNavigate을 사용하여 MainPage로 이동.
 - logout() : localStorage삭제만 진행하고, logout 버튼 클릭시 Link 컴포넌트를 통해 LoginPage로 이동.
 
-> Assignment 1 : Login 파트 85% 완료 (코드 정리 필요) <br/> > _Assignment 2 : GNB 100% 완료_ <br/>
-> Assignment 3 : Validation 파트 90% 완료 (ID,PW 정규식 틀림. 수정 예정) <br/> > _Assignment 4 : SPA 라우팅 파트 100% 완료_ <br/>
+> Assignment 1 : Login 파트 85% 완료 (코드 정리 필요) <br/> 
+~~Assignment 2 : GNB 100% 완료~~ <br/>
+Assignment 3 : Validation 파트 90% 완료 (ID,PW 정규식 틀림. 수정 예정) <br/> 
+~~Assignment 4 : SPA 라우팅 파트 100% 완료~~ <br/>
 > Assignment 5 : Feed 개발 5% 완료 <br/>
 
 - 21/06/2022
@@ -58,7 +61,10 @@ npm start
 - public 디렉토리에 데이터를 저장해서 가져오는 방법은 처음 봐서 구글링하여 정보 얻음. axios로 데이터를 가져와 Feed 컴포넌트에 뿌림.
 - 20/06/2022 완료하지 못한 정규식 수정, 코드 정리 진행.
 
-> _Assignment 1 : Login 파트 100% 완료_ <br/> > _Assignment 2 : GNB 100% 완료_ <br/> > _Assignment 3 : Validation 파트 100% 완료_ <br/> > _Assignment 4 : SPA 라우팅 파트 100% 완료_ <br/>
+>~~Assignment 1 : Login 파트 100% 완료~~ <br/> 
+>~~Assignment 2 : GNB 100% 완료~~ <br/> 
+>~~Assignment 3 : Validation 파트 100% 완료~~ <br/> 
+>~~Assignment 4 : SPA 라우팅 파트 100% 완료~~ <br/>
 > Assignment 5 : Feed 개발 50% 완료 (image.onload를 사용한 loading 상태와 Comment 컴포넌트 기능 구현 필요)<br/>
 
 - 22/06/2022
@@ -68,5 +74,8 @@ npm start
 - Comment 컴포넌트 : useState 사용하여 댓글 입력 구현, map 함수로 댓글 출력 구현
 - image.onload 이벤트 적용 : useState와 onload로 loading 상태를 구현. loading 상태에 따라 피드 컴포넌트를 숨기고 보여줌(css-visibility)
 
-> _Assignment 1 : Login 파트 100% 완료_ <br/>
-> _Assignment 2 : GNB 100% 완료_ <br/> > _Assignment 3 : Validation 파트 100% 완료_ <br/> > _Assignment 4 : SPA 라우팅 파트 100% 완료_ <br/> > _Assignment 5 : Feed 개발 100% 완료_<br/>
+> ~~Assignment 1 : Login 파트 100% 완료~~ <br/> 
+> ~~Assignment 2 : GNB 100% 완료~~ <br/> 
+> ~~Assignment 3 : Validation 파트 100% 완료~~ <br/> 
+> ~~Assignment 4 : SPA 라우팅 파트 100% 완료~~ <br/> 
+> ~~Assignment 5 : Feed 개발 100% 완료~~ <br/>
