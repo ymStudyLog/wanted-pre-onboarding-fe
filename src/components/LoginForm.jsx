@@ -1,12 +1,8 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import color from '../styles/color';
 import { useNavigate } from 'react-router-dom';
 import { validation } from '../lib/checkValidate';
-import { useEffect } from 'react';
-
-//Ref를 사용한 렌더링 최적화는 아직 뭔지 모르겠음. => ref가 dom에 직접 접근하는거니까 일단 달아서 뭔가를 했는데 이게 최적화인지는 모르겠음
-//에러 찾기 , 렌더링 최적화 및 코드 최적화 하기
 
 //test 계정
 const adminAccount = {
@@ -19,41 +15,40 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
 
   //유효성 검사 결과 저장
-  const [validUsername, setValidUsername] = useState(false);
-  const [validPassword, setValidPassword] = useState(false);
-  const [validUser, setValidUser] = useState(false);
+  const [idValid, setIdValid] = useState(true);
+  const [pwValid, setPwValid] = useState(true);
+  const [loginValid, setLoginValid] = useState(false);
 
   const navigate = useNavigate();
   const idRef = useRef(null);
   const pwRef = useRef(null);
   const buttonRef = useRef(null);
 
-  //인풋 유효성 검사 함수 - 나중에 useCallback? => useState로 동적 값을 저장할때 내가 입력한 값보다 하나씩 적게 저장되는 문제** -> useState빼고 다이렉트로 집어넣음
-  //인풋이 입력되는 실시간으로 유효성 검사를 하려면 useState에 저장하고 나서 그 값을 유효성 검사를 하는게 아니라 e.target.value로 바로 유효성 검사를 한 다음 useState로 저장해야한다. 순서가 중요함
+  //id&pw 유효성 검사 - 통과하면 true / 못하면 false
   const onIdChange = (e) => {
-    const result = validation(idRef.current.name, e.target.value); //useRef -> e.target.name 대체 가능
+    const result = validation(idRef.current.name, e.target.value);
     if (result === false) {
-      setValidUsername(true);
+      setIdValid(false);
     } else {
-      setValidUsername(false);
+      setIdValid(true);
       setUsername(e.target.value);
     }
   };
 
   const onPwChange = (e) => {
-    const result = validation(pwRef.current.name, e.target.value); //useRef -> e.target.name 대체 가능
+    const result = validation(pwRef.current.name, e.target.value);
     if (result === false) {
-      setValidPassword(true);
+      setPwValid(false);
     } else {
-      setValidPassword(false);
+      setPwValid(true);
       setPassword(e.target.value);
     }
   };
 
-  //id/pw가 유효하면 버튼 활성화
+  //id/pw가 유효하면 로그인 버튼 활성화
   useEffect(() => {
     if (username && password) {
-      setValidUser(true);
+      setLoginValid(true);
       buttonRef.current.disabled = false;
     }
   }, [username, password]);
@@ -63,7 +58,7 @@ const LoginForm = () => {
     if (username === adminAccount.id && password === adminAccount.pw) {
       try {
         localStorage.setItem('user', JSON.stringify(username));
-        navigate('/main'); //navigate 사용안하고 어차피 disabled 속성 사용하니까 Link로 써도 될 듯?
+        navigate('/main');
       } catch (e) {
         console.log('localStorage Error!');
       }
@@ -81,7 +76,7 @@ const LoginForm = () => {
         autoComplete="username"
         placeholder="전화번호, 사용자 이름 또는 이메일"
         ref={idRef}
-        valid={validUsername}
+        valid={idValid}
         onChange={onIdChange}
       />
       <Input
@@ -90,10 +85,10 @@ const LoginForm = () => {
         autoComplete="password"
         placeholder="비밀번호"
         ref={pwRef}
-        valid={validPassword}
+        valid={pwValid}
         onChange={onPwChange}
       />
-      <Button disabled valid={validUser} onClick={login} ref={buttonRef}>
+      <Button disabled valid={loginValid} onClick={login} ref={buttonRef}>
         로그인
       </Button>
     </StyledForm>
@@ -124,10 +119,10 @@ const Input = styled.input`
   ${(props) =>
     props.valid
       ? css`
-          border-color: ${color.red};
+          border-color: ${color.gray[4]};
         `
       : css`
-          border-color: ${color.gray[4]};
+          border-color: ${color.red};
         `}
 `;
 

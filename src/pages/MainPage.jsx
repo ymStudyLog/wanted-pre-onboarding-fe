@@ -5,11 +5,11 @@ import Feed from '../components/feed/Feed';
 import styled from 'styled-components';
 import color from '../styles/color';
 
-//데이터 주소 ->앞쪽 http://localhost:3000/은 가져오기 해야될듯 실행하는 로컬마다 다를테니까
-const api = 'http://localhost:3000/data/sampleFeed.json';
+// window.location.href = '로컬 호스트 주소/main'
+const currentUrl = window.location.href.split('/main')[0];
+const api = `${currentUrl}/data/sampleFeed.json`;
 
 const MainPage = () => {
-  //로딩 상태 만들어야함 - img가 다 불러와질때까지 기다리게 하기 / img가 가장 오래걸림!!!
   const [feeds, setFeeds] = useState({
     feeds: [],
   });
@@ -21,11 +21,7 @@ const MainPage = () => {
     setFeeds({ feeds: feeds });
   };
 
-  useEffect(() => {
-    getFeed(api);
-  }, []);
-
-  //로그인 정보(localStorage) 와 logout 메서드 props로 Navbar 컴포넌트에 전달
+  //로그인 정보(localStorage)와 logout 메서드 Navbar 컴포넌트에 전달
   const user = localStorage.getItem('user');
   const logout = useCallback(() => {
     try {
@@ -33,6 +29,13 @@ const MainPage = () => {
     } catch (e) {
       console.log('localStorage Error!');
     }
+  }, []);
+
+  useEffect(() => {
+    //로그인해야 feed를 볼 수 있음
+    if (user) {
+      getFeed(api);
+    } else return;
   }, []);
 
   return (

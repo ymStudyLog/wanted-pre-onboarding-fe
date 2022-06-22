@@ -23,29 +23,22 @@ const Comment = () => {
 
   const post = (e) => {
     e.preventDefault();
-    {
-      commentList.length === 0
-        ? setComment({
-            commentList: [inputValue],
-            inputValue: '',
-          })
-        : setComment({
-            commentList: [...commentList].concat([inputValue]),
-            inputValue: '',
-          });
-    }
+    setComment({
+      commentList: [...commentList].concat([inputValue]),
+      inputValue: '',
+    });
   };
 
   return (
     <>
       <CommentDisplay>
         {commentList &&
-          commentList.map((el) => {
+          commentList.map((comment) => {
             idRef.current += 1;
             return (
               <CommentLine key={idRef.current}>
                 <span style={{ fontWeight: 'bold' }}>{adminNick}</span>
-                <span>{el}</span>
+                <span>{comment}</span>
               </CommentLine>
             );
           })}
@@ -59,7 +52,7 @@ const Comment = () => {
             placeholder="댓글달기..."
             value={comment.inputValue}
             onChange={(e) => {
-              setComment({ inputValue: e.target.value, commentList });
+              setComment({ ...comment, inputValue: e.target.value });
             }}
           />
           <Button type="submit" onClick={post}>

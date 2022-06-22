@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import color from '../../styles/color';
 import styled from 'styled-components';
 import Comment from './Comment';
@@ -7,10 +7,13 @@ import { BsChatLeftDots, BsBookmark } from 'react-icons/bs';
 import { BiPaperPlane } from 'react-icons/bi';
 
 const Feed = ({ id, nickname, img, likes }) => {
-  const onLoad = () => {};
+  //이미지 로딩 완료시 loading=true, 로딩 전 혹은 로딩 실패시 loading=false
+  const [loading, setLoading] = useState(false);
 
   return (
-    <FeedContainer>
+    <FeedContainer
+      style={loading ? { visibility: 'visible' } : { visibility: 'hidden' }}
+    >
       <Header>
         <Profile>
           <ProfileImg />
@@ -19,10 +22,14 @@ const Feed = ({ id, nickname, img, likes }) => {
         <HiOutlineDotsHorizontal size={18} />
       </Header>
 
-      <CutImg
+      <StyledImg
         src={img}
         onLoad={() => {
-          console.log('이미지 로딩 완료');
+          console.log(`${id}번째 이미지 로딩 성공`);
+          setLoading(!loading);
+        }}
+        onError={() => {
+          console.log(`${id}번째 이미지 로딩 실패`);
         }}
       />
 
@@ -74,7 +81,7 @@ const ProfileImg = styled.div`
   margin-right: 0.5rem;
 `;
 
-const CutImg = styled.img`
+const StyledImg = styled.img`
   width: 100%;
 `;
 
