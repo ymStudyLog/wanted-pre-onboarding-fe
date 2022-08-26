@@ -25,7 +25,6 @@ const Feed = ({ id, nickname, img, likes }) => {
       <StyledImg
         src={img}
         onLoad={() => {
-          console.log(`${id}번째 이미지 로딩 성공`);
           setLoading(!loading);
         }}
         onError={() => {

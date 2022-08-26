@@ -9,21 +9,21 @@ const GlobalStyles = createGlobalStyle`
    outline:none;
    border:none;
   }
+
+  html, #root, body {
+  min-height:  100vh;
+  }
   
  body {
-   min-height: 100vh;
    margin:0;
    padding:0;
  }
 
  #root{
-  min-height: 100vh;
   background: ${color.gray[0]};
  }
 
- html{
-  min-height:  100vh;
- }
+ 
 `;
 
 export default GlobalStyles;

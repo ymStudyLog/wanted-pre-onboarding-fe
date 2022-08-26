@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/layout/Navbar';
 import Feed from '../components/feed/Feed';
 import styled from 'styled-components';
 import color from '../styles/color';
 
-// window.location.href = '로컬 호스트 주소/main'
+// window.location.href = '로컬 호스트 주소/main' -> 이거 그냥 앞에 url 없어도 된데.
 const currentUrl = window.location.href.split('/main')[0];
 const api = `${currentUrl}/data/sampleFeed.json`;
 
