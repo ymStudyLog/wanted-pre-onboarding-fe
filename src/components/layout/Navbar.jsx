@@ -1,19 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../assets/logo.png';
-import color from '../styles/color';
+import Logo from '../../assets/logo.png';
+import color from '../../styles/color';
 import { Link } from 'react-router-dom';
+import Search, { HeaderInput } from './Search';
 
 const Navbar = ({ user, logout }) => {
   return (
     <Header>
       <SmallLogoImg src={Logo} />
-      <HeaderInput
-        type="text"
-        placeholder="검색"
-        autoComplete="검색"
-        name="no-function"
-      />
+      <Search>
+        <HeaderInput
+          type="text"
+          placeholder="검색"
+          autoComplete="검색"
+          name="no-function"
+        />
+      </Search>
+
       <ButtonWrapper>
         <IconButton />
         <IconButton />
@@ -69,17 +73,5 @@ const ButtonWrapper = styled.div`
 
   @media only screen and (min-width: 768px) {
     min-width: 12rem;
-  }
-`;
-
-const HeaderInput = styled.input`
-  display: none;
-
-  @media only screen and (min-width: 769px) {
-    display: inline;
-    width: 250px;
-    padding: 0.8rem 0.5rem;
-    background: ${color.gray[2]};
-    font-weight: bold;
   }
 `;

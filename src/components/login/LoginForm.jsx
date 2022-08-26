@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import color from '../styles/color';
+import color from '../../styles/color';
 import { useNavigate } from 'react-router-dom';
-import { validation } from '../lib/checkValidate';
+import { validation } from '../../utils/checkValidate';
 
 //test 계정
 const adminAccount = {

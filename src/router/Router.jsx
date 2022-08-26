@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MainPage';
-import LoginPage from './pages/LoginPage';
-import NotFoundPage from './pages/NotFoundPage';
+import MainPage from '../pages/MainPage';
+import LoginPage from '../pages/LoginPage';
+import NotFoundPage from '../pages/NotFoundPage';
 
-function App() {
+//서브라우트 - Outlat 적용하기
+const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />}>
@@ -14,6 +15,6 @@ function App() {
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
-}
+};
 
-export default App;
+export default Router;
