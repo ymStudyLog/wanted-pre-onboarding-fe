@@ -5,7 +5,7 @@
 
 로그인 가능한 admin 계정
 
-> id: 'aaaaa@aaaaa.aaa'
+> id: 'aaaaa@aaaaa.aaa' <br/>
 > pw: 'aaa12a!@A'
 
 ## 개발자 소개
