@@ -3,43 +3,28 @@
 
 # :fire: 원티드 프리온보딩 프론트엔드 코스 5차 사전과제 :fire:
 
-로그인 가능한 admin 계정
+## 로그인 용 계정 정보
 
 > id: 'aaaaa@aaaaa.aaa' <br/>
 > pw: 'aaa12a!@A'
 
-## 개발자 소개
-
-> 이름: 이유미 <br/>
-> Github: [![profile-badge](https://img.shields.io/badge/Github-Profile-blue?style=flat&logo=Git&logoColor=F05032)](https://github.com/ymStudyLog) <br/>
-> 이메일: ylee585@gmail.com <br/>
-> 리액트와 자바스크립트를 주로 사용하는 신입 프론트엔드 포지션 구직자입니다.:smile: <br/>
-
-## 개발환경 세팅
+## 실행
 
 ```
-npm install
+
+git clone https://github.com/ymStudyLog/wanted-pre-onboarding-fe.git
+
+npm i
+
 npm start
-//그 외 React를 구동할 수 있는 기본 환경 필요
+
 ```
 
-## 과제 설명
+## 목표
 
-#### 목표
+필수로 주어진 assignment 5개를 모두 구현하는 것 
 
-- 레포지토리 fork후 초기 readme를 꼼꼼하게 읽고 assignment 5개를 바탕으로 빌드 계획을 세움.
-- 6월 22일 이내 제출을 목표로 빠르게 개발.
-
-#### 로그인을 위한 테스트 계정 (components/LoginForm.jsx에서 확인|수정 가능)
-
-- id: aaaaa@aaaaa.aaa
-- pw: aaa12a!@A
-
-#### 코멘트 닉네임 (components/feed/Comment.jsx 에서 확인|수정 가능)
-
-- test0123
-
-#### 개발 순서(날짜별)
+## 개발 순서(날짜별)
 
 ##### 1. 19/06/2022
 
@@ -83,3 +68,7 @@ npm start
 - image.onload 이벤트 적용 : useState와 onload로 loading 상태를 구현. loading 상태에 따라 피드 컴포넌트를 숨기고 보여줌(css-visibility)
 
 > ~~Assignment 1 : Login 파트 100% 완료~~ <br/> > ~~Assignment 2 : GNB 100% 완료~~ <br/> > ~~Assignment 3 : Validation 파트 100% 완료~~ <br/> > ~~Assignment 4 : SPA 라우팅 파트 100% 완료~~ <br/> > ~~Assignment 5 : Feed 개발 100% 완료~~ <br/>
+
+## 클린 코드 작성법을 바탕으로 refactoring한 프로젝트
+
+- organization repository : https://github.com/Wanted-Pre-Onboarding-FE-Team5/pre-assginment-refactoring
