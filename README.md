@@ -1,14 +1,11 @@
-:eyes: _*Go back to github profile to check the other repositories*_ :eyes:
-[![profile-badge](https://img.shields.io/badge/Github-Profile-blue?style=flat&logo=Git&logoColor=F05032)](https://github.com/ymStudyLog)
+# 원티드 프리온보딩 프론트엔드 코스 5차 사전과제
 
-# :fire: 원티드 프리온보딩 프론트엔드 코스 5차 사전과제 :fire:
-
-## 로그인 용 계정 정보
+### 로그인용 계정 정보
 
 > id: 'aaaaa@aaaaa.aaa' <br/>
 > pw: 'aaa12a!@A'
 
-## 실행
+### 실행
 
 ```
 
@@ -20,11 +17,11 @@ npm start
 
 ```
 
-## 목표
+### 목표
 
 필수로 주어진 assignment 5개를 모두 구현하는 것 
 
-## 개발 순서(날짜별)
+### 개발 순서(날짜별)
 
 ##### 1. 19/06/2022
 
@@ -69,6 +66,9 @@ npm start
 
 > ~~Assignment 1 : Login 파트 100% 완료~~ <br/> > ~~Assignment 2 : GNB 100% 완료~~ <br/> > ~~Assignment 3 : Validation 파트 100% 완료~~ <br/> > ~~Assignment 4 : SPA 라우팅 파트 100% 완료~~ <br/> > ~~Assignment 5 : Feed 개발 100% 완료~~ <br/>
 
-## 클린 코드 작성법을 바탕으로 refactoring한 프로젝트
+### 클린 코드 작성법을 바탕으로 refactoring
 
 - organization repository : https://github.com/Wanted-Pre-Onboarding-FE-Team5/pre-assginment-refactoring
+
+:eyes: _Go back to github profile to check the other repositories_ :eyes:
+[![github-profile](https://img.shields.io/badge/Github-Profile-blue?style=flat&logo=Git&logoColor=F05032)](https://github.com/ymStudyLog?tab=repositories)
